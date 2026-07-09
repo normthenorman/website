@@ -31,10 +31,20 @@ def admin():
         new_blog_post = Posts(content=blog_content)
         db.session.add(new_blog_post)
         db.session.commit()
-        return redirect('/')
+        return redirect('/admin')
     else:
         posts = Posts.query.order_by(Posts.date_created.desc()).all()
         return render_template('admin.html', posts=posts)
+
+@app.route('/delete-post/<int:id>', methods=['POST', 'GET'])
+def delete(id):
+    post_to_delete = Posts.query.get_or_404(id)
+    try:
+        db.session.delete(post_to_delete)
+        db.session.commit()
+        return redirect('/')
+    except: 
+        return 'i guess we will have to live with that one'
 
 if __name__ == "__main__":
     
