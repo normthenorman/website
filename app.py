@@ -27,21 +27,18 @@ def blog():
 @app.route('/admin', methods=['POST', 'GET'])
 def admin():
     if request.method == 'POST':
-        blog_content = request.form['post-body']
+        blog_content = request.form.get('post-body')
         new_blog_post = Posts(content=blog_content)
-        
-        try:
-            db.session.add(new_blog_post)
-            db.session.commit()
-            return redirect('/')
-        except:
-            return 'idk something is wrong'
+        db.session.add(new_blog_post)
+        db.session.commit()
+        return redirect('/')
     else:
-        return render_template('admin.html')
+        posts = Posts.query.order_by(Posts.date_created.desc()).all()
+        return render_template('admin.html', posts=posts)
 
 if __name__ == "__main__":
     
     with app.app_context():
         db.create_all()
     
-    app.run(debug=True)
+    app.run()

@@ -12,11 +12,26 @@
     </div>
 
     <div class="blog_page">
-        <form action="" method="post">
-            <textarea class="write_a_post" id="post-body" placeholder="Write what happened..." required></textarea>
+        <form action="/admin" method="post">
+            <textarea class="write_a_post" id="post-body" name="post-body" placeholder="Write what happened..." required></textarea>
             <input class="post_button" type="submit">
         </form>
     </div>
     
+
+    <div class="posts_container">
+        <h3 class="recent_h3">Recent posts</h3>
+        <hr>
+        <div class="posts">
+            {% for post in posts %}
+            <div class="post">
+            <p class="date">{{ post.date_created.strftime('%B %d, %Y') }}</p>
+            <div class="content">{{ post.content }}</div>
+            </div>
+            {% else %}
+                <p class="no_posts_p_admin">No posts yet.</p>
+            {% endfor %}
+        </div>
+    </div>
 
 {% endblock %}

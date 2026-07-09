@@ -320,3 +320,40 @@
     background: var(--orange);
     opacity: 1;
   }
+
+  .posts {
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  .no_posts_p {
+    display: grid;
+    place-items: center;
+    height: 75vh;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+  }
+  
+  .posts_container {
+    margin: 0 auto;
+    width: 900px;
+  }
+
+  .recent_h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: center;
+    transition: .3s;
+  }
+
+  .recent_h3:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .no_posts_p_admin {
+    font-family: 'Outfit', sans-serif;
+    display: grid;
+    place-items: center;
+    height: 25vh;
+    text-align: center;
+  }
