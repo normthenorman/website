@@ -25,12 +25,6 @@
     margin: 0 auto;
   }
 
-  .content {
-    z-index: 0;
-    position: relative;
-    text-align: left;
-  }
-
   .eyebrow {
     text-align: left;
     color: var(--cobalt);
@@ -272,6 +266,8 @@
     margin: 0 auto;
     padding: 3rem 1.5rem 5rem;
   }
+
+  /* ADMIN.HTML */
  
   form {
     display: flex;
@@ -360,8 +356,44 @@
 
   #post-title {
     width: 10vw;
+    border-radius: 4px;
+  }
+
+
+  /* GLOBAL */
+
+  .content {
+    z-index: 0;
+    position: relative;
+    text-align: left;
   }
 
   .title {
     text-align: center;
+  }
+
+  .content,
+  .title {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .date,
+  .post_id {
+    font-size: 15px;
+    font-family: 'Space Grotesk';
+  }
+
+  .post_id {
+      margin: 0;
+  }
+
+  .date {
+      margin: 0;
+  }
+
+  .post_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }

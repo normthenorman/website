@@ -20,18 +20,24 @@
         </form>
     </div>
     
-
+    <br>
     <div class="posts_container">
         <h3 class="recent_h3">Recent posts</h3>
         <hr>
+        <br>
         <div class="posts">
             {% for post in posts %}
             <div class="post">
                 <div class="post_info">
-                    <p class="date">{{ post.date_created.strftime('%B %d, %Y') }}</p>
+                    <p class="date">{{ post.date_created.strftime('%B %d, %Y') }}</p> 
+                    {% if post.id < 10 %}
+                    <p class="post_id">ID: 0{{ post.id }}</p>
+                    {% else %}
+                    <p class="post_id">ID: {{ post.id }}</p>
+                    {% endif %}
+                </div><br>
                     <a href="/delete-post/{{ post.id }}">delete</a>
-                </div>
-                <div class="title"></div>
+                <div class="title">{{ post.title }}</div><br>
             <div class="content">{{ post.content }}</div>
             </div>
             {% else %}
