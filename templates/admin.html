@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>cool ass admin panel</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='assets/norm_blog.ico') }}" type="image/x-icon">
+{% endblock %}
+
+{% block body %}
+    <div class="heading">
+        <h3 class="blog_heading">Norm's cool ass admin panel</h3>
+        <hr>
+    </div>
+
+    <div class="blog_page">
+        <form action="" method="post">
+            <textarea class="write_a_post" id="post-body" placeholder="Write what happened..." required></textarea>
+            <input class="post_button" type="submit">
+        </form>
+    </div>
+    
+
+{% endblock %}

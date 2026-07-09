@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>Norm - my blog</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='assets/norm_blog.ico') }}" type="image/x-icon">
+{% endblock %}
+
+
+{% block body %}
+<div id="nav-container">
+  <h2 id="spine" style="color: #EFF1EA; text-align:center;">N<br>O<br>R<br>M<br></h2>
+  <button id="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+  <span id="symbol">܀܀</span>
+  </button>
+  <nav id="nav" aria-hidden="true" aria-label="Main menu">
+    <div id="nav-inner">
+      <h2>Menu</h2>
+      <hr style="background-color: #C9C7BC; border: none;">
+      <ul>
+        <li><a href="/" tabindex="-1">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+    <div class="heading">
+        <h3 class="blog_heading">Norm's blog</h3>
+        <hr>
+    </div>
+
+
+    {% for post in posts %}
+  <div class="post">
+    <p class="date">{{ post.date_created.strftime('%B %d, %Y') }}</p>
+    <div class="content">{{ post.content }}</div>
+  </div>
+    {% else %}
+      <p>No posts yet.</p>
+    {% endfor %}
+
+<script type="module">
+    import { nav } from "/static/js/functions.js";
+
+    nav();
+</script>
+{% endblock %}

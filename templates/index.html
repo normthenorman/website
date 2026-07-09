@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+  <title>Norm</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='assets/norm.ico') }}" type="image/x-icon">
+{% endblock %}
+
+{% block body %}  
+<div id="nav-container">
+  <h2 id="spine" style="color: #EFF1EA; text-align:center;">N<br>O<br>R<br>M<br></h2>
+  <button id="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+  <span id="symbol">܀܀</span>
+  </button>
+  <nav id="nav" aria-hidden="true" aria-label="Main menu">
+    <div id="nav-inner">
+      <h2>Menu</h2>
+      <hr style="background-color: #C9C7BC; border: none;">
+      <ul>
+        <li><a href="/blog" tabindex="-1">Blog</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="page">
+    <div class="content">
+
+      <br>
+      <p class="eyebrow">Welcome</p>
+      <hr>
+
+    <h1 class="masthead">Norm the<br><em>Norman</em></h1>
+
+    <span class="bigH">H</span><p class="lede">i, I'm Norm — <b>normthenorman</b>, because just <b>norm</b>
+       is taken everywhere. I build things, I write about them here, and every so often something ships.</p>
+
+    <div class="section">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <span class="section-title">About</span>
+        <span class="section-line"></span>
+      </div>
+      <div class="about-body">
+        <p>This is where I keep my projects, notes, and other stuff organized. I enjoy programming. I don't 
+          know what else there is to say about myself, so I'll let the rest of the page do the talking.</p>
+        <p>Feel free to DM me on <b>Discord</b> - I read everything eventually.</p>
+      </div>
+    </div>
+
+      <hr>
+
+
+
+
+    </div>
+</div>
+
+<script type="module">
+    import { nav } from "/static/js/functions.js";
+
+    nav();
+</script>
+
+{% endblock %}  
