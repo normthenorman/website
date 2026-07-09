@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block body %}
+<a style="margin: 0;" href="/">home</a>
     <div class="heading">
         <h3 class="blog_heading">Norm's cool ass admin panel</h3>
         <hr>
@@ -27,7 +28,7 @@
             <div class="post">
                 <div class="post_info">
                     <p class="date">{{ post.date_created.strftime('%B %d, %Y') }}</p>
-                    <a href="/delete/{{ post.id }}">delete</a>
+                    <a href="/delete-post/{{ post.id }}">delete</a>
                 </div>
             <div class="content">{{ post.content }}</div>
             </div>

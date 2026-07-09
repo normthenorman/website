@@ -42,7 +42,7 @@ def delete(id):
     try:
         db.session.delete(post_to_delete)
         db.session.commit()
-        return redirect('/')
+        return redirect('/admin')
     except: 
         return 'i guess we will have to live with that one'
 
