@@ -1,14 +1,15 @@
-{% extends 'base.html' %}
-
-{% block head %}
-<title>you better be me</title>
-{% endblock %}
-
-{% block body %}
-<div class="all">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <title>Document</title>
+</head>
+<body>
     <form action="/login" method="post">
-        <input class="password" type="text" name="password" placeholder="password">
-        <input class="submit" type="submit">
+        <input type="text" name="password" placeholder="password"><br><br>
+        <input type="submit">
     </form>
-</div>
-{% endblock %}
+</body>
+</html>

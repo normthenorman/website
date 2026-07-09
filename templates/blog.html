@@ -33,7 +33,6 @@
     <div class="post">
         <div class="post_info">
           <p class="date">{{ post.date_created.strftime('%B %d, %Y') }}</p> 
-          <p class="date">{{ post.date_created.strftime('%B %d, %Y') }}</p> 
           {% if post.id < 10 %}
           <p class="post_id">ID: 0{{ post.id }}</p>
           {% else %}
@@ -43,6 +42,7 @@
       <div class="title">{{ post.title }}</div><br>
       <div class="content">{{ post.content }}</div>
     </div>
+    <hr>
       {% else %}
         <p class="no_posts_p">No posts yet.</p>
       {% endfor %}
