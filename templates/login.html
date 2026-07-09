@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>you better be me</title>
+{% endblock %}
+
+{% block body %}
+<div class="all">
+    <form action="/login" method="post">
+        <input type="text" name="password">
+        <input type="submit">
+    </form>
+</div>
+{% endblock %}

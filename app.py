@@ -1,6 +1,10 @@
-from flask import Flask, url_for, render_template, request, redirect
+from flask import Flask, url_for, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from dotenv import load_dotenv, dotenv_values
+import os
+
+AUTH_KEY = os.getenv("AUTH_KEY")
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
@@ -25,6 +29,16 @@ def blog():
     posts = Posts.query.order_by(Posts.date_created.desc()).all()
     return render_template('blog.html', posts=posts)
 
+@app.route('/login')
+def login():
+    if request.method == "POST":
+        password = request.form.get("password")
+        
+    if password == AUTH_KEY:
+        session["logged_in"] = True 
+    else:
+        session["logged_in"] = False
+        
 @app.route('/admin', methods=['POST', 'GET'])
 def admin():
     if request.method == 'POST':
