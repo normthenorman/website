@@ -357,3 +357,11 @@
     height: 25vh;
     text-align: center;
   }
+
+  #post-title {
+    width: 10vw;
+  }
+
+  .title {
+    text-align: center;
+  }

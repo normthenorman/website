@@ -9,6 +9,7 @@ db = SQLAlchemy(app)
 
 class Posts(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(300), nullable=False)
     content = db.Column(db.String(25000), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
     
@@ -28,7 +29,8 @@ def blog():
 def admin():
     if request.method == 'POST':
         blog_content = request.form.get('post-body')
-        new_blog_post = Posts(content=blog_content)
+        blog_title = request.form.get('post-title')
+        new_blog_post = Posts(title=blog_title, content=blog_content)
         db.session.add(new_blog_post)
         db.session.commit()
         return redirect('/admin')
